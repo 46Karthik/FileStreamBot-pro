@@ -118,7 +118,7 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         url = 'https://django-test-backend.vercel.app/songstore/'
-        data = {'song': 'testingbotresponce'}
+        data = {'song': 'online_link'}
         response = requests.post(url, data=data)
         if response.status_code == 201:
             await log_msg.reply_text("POST request was successful!")

@@ -91,7 +91,7 @@ async def private_receive_handler(c: Client, m: Message):
             await m.reply_text(e)
             await c.send_message(
                 chat_id=m.chat.id,
-                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** [Adarsh Goel](https://github.com/adarsh-goel)",
+                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** [Karthik](https://github.com/adarsh-goel)",
                 
                 disable_web_page_preview=True)
             return
@@ -111,9 +111,9 @@ async def private_receive_handler(c: Client, m: Message):
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url=stream_link), #Stream Link
                                                 InlineKeyboardButton('DOWNLOAD 📥', url=online_link)]]) #Download Link
         )
-        data = {'song': 'online_link'}
+        data = {'song': 'botsendsong'}
         response = requests.post(url, data=data)
-        if response.status_code == 200:
+        if response.status_code == 201:
             print("POST request was successful!")
             print("Response content:", response.text)
         else:

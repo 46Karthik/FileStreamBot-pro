@@ -122,10 +122,8 @@ async def private_receive_handler(c: Client, m: Message):
         print('started',online_link)
         response = requests.post(url, data=data)
         if response.status_code == 201:
-            await log_msg.reply_text("POST request was successful!")
             print("POST request was successful!")
         else:
-            await log_msg.reply_text("POST request was failed!")
             print(f"POST request failed with status code {response.status_code}")
     except requests.RequestException as e:
         print(f"RequestException: {e}")
